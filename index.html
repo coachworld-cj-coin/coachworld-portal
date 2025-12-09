@@ -9,16 +9,567 @@
     name="description"
     content="Coach World — Home of $CJ Coin (Coach Joel House) on BNB Smart Chain. Community coin supporting the InterLink ecosystem."
   />
+  <style>
+    /* Glow Pulse Animation */
+.glow-pulse {
+  animation: glow 1.8s infinite ease-in-out;
+  position: relative;
+}
 
-  <link rel="stylesheet" href="css/index.css" />
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 4px rgba(255, 216, 107, 0.2),
+                 0 0 8px rgba(255, 216, 107, 0.15);
+  }
+  50% {
+    text-shadow: 0 0 6px rgba(255, 216, 107, 0.6),
+                 0 0 12px rgba(255, 216, 107, 0.45),
+                 0 0 20px rgba(255, 216, 107, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 4px rgba(255, 216, 107, 0.2),
+                 0 0 8px rgba(255, 216, 107, 0.15);
+  }
+}
+    :root {
+      --bg: #050509;
+      --bg-alt: #0c0c12;
+      --card: #11111a;
+      --border: #272733;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --accent: #f5c75b;
+      --accent-soft: rgba(245, 199, 91, 0.14);
+      --accent-strong: #ffd86b;
+      --danger-soft: rgba(248, 113, 113, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, #202033 0, #050509 45%, #020205 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent-strong);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 5, 9, 0.96),
+        rgba(5, 5, 9, 0.7)
+      );
+      border-bottom: 1px solid rgba(39, 39, 51, 0.85);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.7rem 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 2px solid var(--accent-strong);
+      box-shadow: 0 0 0 3px rgba(245, 199, 91, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #111827;
+      background: radial-gradient(circle at top left, #ffe9a3 0, #f5c75b 55%, #f59e0b 100%);
+    }
+
+    .logo-circle span {
+      transform: translateY(1px);
+    }
+
+    .nav-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .nav-title-main {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    .nav-title-sub {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.78rem;
+    }
+
+    .nav-links a {
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      border-color: var(--accent-soft);
+      background: rgba(17, 17, 26, 0.9);
+      color: var(--accent-strong);
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: linear-gradient(
+        to right,
+        rgba(245, 199, 91, 0.1),
+        rgba(245, 158, 11, 0.04)
+      );
+      font-size: 0.78rem;
+      color: var(--accent-strong);
+      font-weight: 500;
+    }
+
+    .main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.4rem 1.1rem 3.5rem;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.15fr);
+      gap: 1.8rem;
+      align-items: center;
+      padding: 1.8rem 0 2.2rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(15, 15, 23, 0.86);
+      color: var(--muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.24);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.2vw, 2.9rem);
+      margin-bottom: 0.65rem;
+    }
+
+    .hero h1 span.accent {
+      color: var(--accent-strong);
+    }
+
+    .hero-tagline {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 1.2rem;
+      max-width: 32rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.88rem;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 0 0, #fff7d6 0, #f5c75b 40%, #f59e0b 100%);
+      color: #111827;
+      font-weight: 600;
+      box-shadow: 0 14px 32px rgba(245, 199, 91, 0.45);
+    }
+
+    .btn-outline {
+      border-color: var(--accent-soft);
+      background: rgba(15, 15, 23, 0.92);
+      color: var(--muted);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-strong);
+      color: var(--accent-strong);
+      text-decoration: none;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.7rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta div span.label {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: #6b7280;
+      margin-bottom: 0.08rem;
+    }
+
+    .highlight {
+      color: var(--accent-strong);
+      font-weight: 600;
+    }
+
+    aside.card {
+      border-radius: 1.2rem;
+      padding: 1.25rem 1.15rem;
+      background:
+        radial-gradient(circle at top left, #272749 0, #11111a 45%, #050509 100%);
+      border: 1px solid var(--border);
+      box-shadow: 0 26px 60px rgba(5, 5, 12, 0.95);
+    }
+
+    .card h2 {
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .token-overview {
+      display: grid;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.45rem;
+    }
+
+    .pill {
+      padding: 0.22rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(15, 15, 23, 0.86);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .supply-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.75);
+      font-size: 0.78rem;
+      color: var(--accent-strong);
+      margin-top: 0.3rem;
+    }
+
+    .section {
+      margin-top: 2.6rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .info-card {
+      border-radius: 1rem;
+      padding: 0.9rem 0.95rem 1rem;
+      background: linear-gradient(
+        145deg,
+        rgba(17, 24, 39, 0.96),
+        rgba(5, 5, 12, 0.96)
+      );
+      border: 1px solid rgba(39, 39, 51, 0.96);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .info-card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.35rem;
+      color: #e5e7eb;
+    }
+
+    .tokenomics-list {
+      list-style: none;
+      padding: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .tokenomics-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.18rem 0;
+    }
+
+    .tokenomics-label {
+      color: #9ca3af;
+    }
+
+    .tokenomics-value {
+      color: #f9fafb;
+      font-weight: 500;
+    }
+
+    .roadmap-steps {
+      list-style: none;
+      padding: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .roadmap-steps li {
+      padding: 0.4rem 0;
+      border-bottom: 1px dashed rgba(55, 65, 81, 0.65);
+    }
+
+    .roadmap-phase {
+      display: block;
+      margin-bottom: 0.18rem;
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .alert {
+      border-radius: 0.9rem;
+      padding: 0.7rem 0.8rem;
+      margin-top: 0.7rem;
+      background: var(--danger-soft);
+      border: 1px solid rgba(248, 113, 113, 0.65);
+      color: #fecaca;
+      font-size: 0.8rem;
+    }
+
+    .whitepaper-box p {
+      margin-bottom: 0.45rem;
+    }
+
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(15, 15, 23, 0.96);
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.45rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(39, 39, 51, 0.95);
+      padding: 1.25rem 1.1rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: radial-gradient(circle at top, #050509 0, #020205 60%);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-strong);
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .main {
+        padding-inline: 0.9rem;
+      }
+
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+  <style>
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.78);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+.modal-box {
+  width: 90%;
+  max-width: 1024px;
+  height: 85vh;
+  background: #050509;
+  border: 1px solid #272733;
+  border-radius: 1rem;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+  overflow: hidden;
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+}
+.modal-close:hover {
+  background: rgba(255,255,255,0.2);
+}
+.modal-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.interlink-link:hover {
+  text-decoration: underline;
+}
+</style>
 </head>
-
 <body>
   <header>
     <nav class="nav">
       <div class="nav-left">
+        <!-- Replace this placeholder with your real logo image if you want:
+             <img src="logo.png" alt="CJ Coin Logo" width="32" height="32" style="border-radius:999px;border:2px solid var(--accent);" />
+        -->
         <img src="logo.png" alt="logo.png" width="32" height="32"
-          style="border-radius:999px;border:2px solid #f5c75b;box-shadow:0 0 0 3px rgba(245,199,91,0.25);" />
+     style="border-radius:999px;border:2px solid #f5c75b;box-shadow:0 0 0 3px rgba(245,199,91,0.25);" />
 
         <div class="nav-title">
           <div class="nav-title-main">Coach World</div>
@@ -59,14 +610,20 @@
         </p>
 
         <div class="hero-cta-row">
-          <a class="btn btn-primary"
+          <a
+            class="btn btn-primary"
             href="https://pancakeswap.finance/swap?outputCurrency=0x9ECEfef5d5B5b0aCF2467393e7b5A6c7c501c6F6"
-            target="_blank" rel="noopener noreferrer">
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             🥞 Buy $CJ on PancakeSwap
           </a>
-          <a class="btn btn-outline"
+          <a
+            class="btn btn-outline"
             href="https://bscscan.com/token/0x9ECEfef5d5B5b0aCF2467393e7b5A6c7c501c6F6"
-            target="_blank" rel="noopener noreferrer">
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             🔎 View Contract on BscScan
           </a>
         </div>
@@ -114,19 +671,262 @@
       </aside>
     </section>
 
-    <!-- SECTIONS BELOW -->
-    <!-- (UNCHANGED CONTENT FROM ORIGINAL) -->
-    <!-- About, Tokenomics, Roadmap, Whitepaper, Contact -->
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="section-header">
+        <h2 class="section-title">About Coach World &amp; $CJ Coin</h2>
+        <p class="section-sub">
+          Coach World is the gateway to Coach Joel House — an ecosystem and community
+          built around education, coaching, and Web3 participation. Inside this world,
+          <strong>$CJ</strong> acts as the community utility coin.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="info-card">
+          <h3>What is $CJ?</h3>
+          <p>
+            $CJ is a personal and community coin created and maintained by Coach Joel.
+            It is dedicated to supporting the InterLink ecosystem and powering utilities
+            inside Coach Joel House, acting as a digital “gold piggybank” for community
+            activity.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>What it is NOT</h3>
+          <p>
+            $CJ is <strong>not</strong> a fundraising vehicle and <strong>not</strong> an
+            investment product. There was no presale, no team or VC allocation, and no
+            guaranteed returns. All actions are transparent on-chain.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Mission</h3>
+          <p>
+            To create a small, practical, and community-focused token that strengthens
+            ITLX and InterLink by encouraging P2P usage, rewarding engaged supporters,
+            and enabling utilities in Coach Joel House.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOKENOMICS -->
+    <section class="section" id="tokenomics">
+      <div class="section-header">
+        <h2 class="section-title">Tokenomics</h2>
+        <p class="section-sub">
+          Simple and transparent. $CJ is designed for utility, community, and long-term
+          ecosystem support — not speculation.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="info-card">
+          <h3>Supply &amp; Distribution</h3>
+          <ul class="tokenomics-list">
+            <li>
+              <span class="tokenomics-label">Name</span>
+              <span class="tokenomics-value">Coach Joel House</span>
+            </li>
+            <li>
+              <span class="tokenomics-label">Ticker</span>
+              <span class="tokenomics-value">$CJ</span>
+            </li>
+            <li>
+              <span class="tokenomics-label">Chain</span>
+              <span class="tokenomics-value">
+                BNB Smart Chain (BEP-20) · InterLink Chain soon
+              </span>
+            </li>
+            <li>
+              <span class="tokenomics-label">Total Supply</span>
+              <span class="tokenomics-value">21,000,000 CJ (fixed)</span>
+            </li>
+            <li>
+              <span class="tokenomics-label">Presale</span>
+              <span class="tokenomics-value">0 — no fundraising</span>
+            </li>
+            <li>
+              <span class="tokenomics-label">Team / VC</span>
+              <span class="tokenomics-value">0 — no allocations</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>Mechanics &amp; Security</h3>
+          <ul class="tokenomics-list">
+            <li>
+              <span class="tokenomics-label">Taxes</span>
+              <span class="tokenomics-value">0% buy &amp; sell tax</span>
+            </li>
+            <li>
+              <span class="tokenomics-label">Liquidity</span>
+              <span class="tokenomics-value">Provided &amp; locked (PinkSale)</span>
+            </li>
+            <li>
+              <span class="tokenomics-label">Minting</span>
+              <span class="tokenomics-value">
+                Owner-only, used only for rewards &amp; utilities
+              </span>
+            </li>
+            <li>
+              <span class="tokenomics-label">Burning</span>
+              <span class="tokenomics-value">
+                Enabled — optional tool to support price floor
+              </span>
+            </li>
+            <li>
+              <span class="tokenomics-label">Contract</span>
+              <span class="tokenomics-value">Verified on BscScan</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="section" id="roadmap">
+      <div class="section-header">
+        <h2 class="section-title">Roadmap</h2>
+        <p class="section-sub">
+          A practical roadmap focused on launch stability, visibility, community growth,
+          and real ecosystem integration with InterLink &amp; ITLX.
+        </p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="info-card">
+          <h3>Phase 1 — Launch</h3>
+          <ul class="roadmap-steps">
+            <li>
+              <span class="roadmap-phase">Deploy &amp; Verify</span>
+              Contract deployment, verification on BscScan, and token logo release.
+            </li>
+            <li>
+              <span class="roadmap-phase">Liquidity &amp; Lock</span>
+              Liquidity provision and LP lock using PinkSale (lock proof available).
+            </li>
+            <li>
+              <span class="roadmap-phase">Foundations</span>
+              Whitepaper publication and Coach World website launch.
+            </li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>Phase 2+ — Growth &amp; Utilities</h3>
+          <ul class="roadmap-steps">
+            <li>
+              <span class="roadmap-phase">Listings &amp; Visibility</span>
+              DexScreener / DexView listings, token explorer updates, and publicizing
+              LP locks.
+            </li>
+            <li>
+              <span class="roadmap-phase">Community Growth</span>
+              Community activities, small airdrops, events, and optional buyback &amp;
+              burn campaigns.
+            </li>
+            <li>
+              <span class="roadmap-phase">Ecosystem Integration</span>
+              P2P $CJ usage inside ITLX wallet flows and coin-gated features in Coach
+              Joel House, with more utilities as the community grows.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHITEPAPER -->
+    <section class="section" id="whitepaper">
+      <div class="section-header">
+        <h2 class="section-title">Whitepaper — Coach Joel House ($CJ Coin)</h2>
+        <p class="section-sub">
+          Summary of the core principles from the $CJ whitepaper. A full downloadable
+          PDF can be added here later.
+        </p>
+      </div>
+
+      <div class="info-card whitepaper-box">
+        <p>
+          <strong>Coach Joel House</strong> is the ecosystem built around Coach Joel and
+          his community. Within this ecosystem, <strong>$CJ</strong> serves as the
+          utility coin for rewards, transfers, and engagement.
+        </p>
+        <p>
+          $CJ is dedicated to supporting the <strong>InterLink</strong> ecosystem and
+          <strong>ITLX Super Wallet</strong>, especially by increasing P2P usage, HCS
+          activity, and onboarding loyal community members into InterLink.
+        </p>
+        <p>
+          Inside <strong>Coach Joel House</strong>, $CJ is used for rewards and
+          airdrops, community events and games, internal P2P transfers, and
+          small-scale utilities that strengthen the community.
+        </p>
+        <p>
+          Any <strong>distribution, mint, buyback, or burn</strong> performed by the
+          owner will be done transparently on-chain and strictly for stated community
+          purposes. There is <strong>no guarantee of return</strong> for holders.
+        </p>
+        <p>
+          As the ecosystem grows, more utilities will be added, including deeper
+          wallet integrations, token-gated features, and additional ways for the
+          community to engage using $CJ.
+        </p>
+
+        <div class="alert">
+          ⚠️ <strong>Disclaimer:</strong> $CJ is a community utility coin. It is not an
+          investment, not a security, and not a guarantee of profit. Participation is
+          voluntary. Always do your own research before interacting with any
+          cryptocurrency.
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <h2 class="section-title">Contact &amp; Community</h2>
+        <p class="section-sub">
+          For collaborations, ecosystem integration, or community questions about $CJ
+          Coin and Coach World, reach out using the contact below.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Contact Coach Joel</h3>
+        <p>
+          📧 Email:
+          <a href="mailto:coachjoelhouse@gmail.com">coachjoelhouse@gmail.com</a>
+        </p>
+        <div class="contact-chip">
+          Official contact for Coach World &amp; $CJ Coin
+        </div>
+        <p style="margin-top:0.75rem;">
+          Community channels (Telegram, X, Facebook, etc.) can be added here as the
+          ecosystem expands.
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="footer-links">
       <a href="#top">Back to top</a>
-      <a href="https://bscscan.com/token/0x9ECEfef5d5B5b0aCF2467393e7b5A6c7c501c6F6"
-        target="_blank" rel="noopener noreferrer">BscScan
+      <a
+        href="https://bscscan.com/token/0x9ECEfef5d5B5b0aCF2467393e7b5A6c7c501c6F6"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        BscScan
       </a>
-      <a href="https://pancakeswap.finance/swap?outputCurrency=0x9ECEfef5d5B5b0aCF2467393e7b5A6c7c501c6F6"
-        target="_blank" rel="noopener noreferrer">Buy on PancakeSwap
+      <a
+        href="https://pancakeswap.finance/swap?outputCurrency=0x9ECEfef5d5B5b0aCF2467393e7b5A6c7c501c6F6"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Buy on PancakeSwap
       </a>
     </div>
     <div>
@@ -134,15 +934,34 @@
     </div>
   </footer>
 
-  <!-- MODAL -->
-  <div id="interlinkModal" class="modal-overlay">
-    <div class="modal-box">
-      <button class="modal-close" id="closeInterlink">✖</button>
-      <iframe src="https://interlinklabs.ai/" class="modal-frame"></iframe>
-    </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <!-- INTERLINK MODAL -->
+<div id="interlinkModal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" id="closeInterlink">✖</button>
+    <iframe src="https://interlinklabs.ai/" class="modal-frame"></iframe>
   </div>
+</div>
+  <script>
+const interlinkLink = document.querySelector('.interlink-link');
+const interlinkModal = document.getElementById('interlinkModal');
+const closeBtn = document.getElementById('closeInterlink');
 
-  <script src="netlify/functions/index.js"></script>
+interlinkLink.addEventListener('click', () => {
+  interlinkModal.style.display = "flex";
+});
+
+closeBtn.addEventListener('click', () => {
+  interlinkModal.style.display = "none";
+});
+
+interlinkModal.addEventListener('click', (e) => {
+  if(e.target === interlinkModal){
+    interlinkModal.style.display = "none";
+  }
+});
+</script>
 </body>
 </html>
-
