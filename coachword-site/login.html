@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Member Login — Coach World</title>
+  <link rel="icon" type="logo.png" href="logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="logo-circle">CJ</div>
+    <h1>Member Login</h1>
+    <p class="sub">
+      Access the private <strong>Coach World</strong> member area for
+      $CJ community updates, tools, and future utilities.
+    </p>
+
+    <form id="loginForm">
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" required placeholder="Your name or handle" />
+
+      <label for="code">Access Code</label>
+      <input id="code" name="code" type="password" required placeholder="Enter member access code" />
+
+      <button type="submit" class="btn">Log In</button>
+    </form>
+
+    <div id="error" class="error"></div>
+
+    <div class="meta">
+      Not a member yet?
+      <a href="register.html">Request access via X (Twitter)</a>.
+    </div>
+
+    <div class="back-link">
+      <a href="index.html">← Back to Coach World</a>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

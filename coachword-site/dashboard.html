@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Member Dashboard — Coach World</title>
+  <link rel="icon" type="logo.png" href="logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+<div class="shell">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div><strong>Coach World · Members</strong></div>
+    <button class="logout-btn" id="logoutBtn">Log Out</button>
+  </div>
+
+  <!-- GREETING -->
+  <div class="card">
+    <h2 id="welcomeTitle">Welcome</h2>
+    <p style="color:var(--muted)">Secure access to Coach World portal.</p>
+  </div>
+
+  <!-- QUICK LINKS -->
+  <div class="card">
+    <h2>$CJ Coin Quick Links</h2>
+    <div>
+      <span class="link-pill"><a href="https://bscscan.com/token/0x9ECEfef5d5B5b0aCF2467393e7b5A6c7c501c6F6" target="_blank">BscScan</a></span>
+      <span class="link-pill"><a href="https://pancakeswap.finance/swap?outputCurrency=0x9ECEfef5d5B5b0aCF2467393e7b5A6c7c501c6F6" target="_blank">Buy CJ</a></span>
+      <span class="link-pill"><a href="https://www.geckoterminal.com/bsc/pools/0x832e1e4aFeE57AA9ddd2F8C81A31d0814d9A15A0" target="_blank">Live Chart</a></span>
+      <span class="link-pill"><a href="https://x.com/CJ_House_Coin" target="_blank">X Updates</a></span>
+    </div>
+  </div>
+
+  <!-- WALLET CONNECT -->
+  <div class="card">
+    <h2>Wallet Connection & Balance</h2>
+
+    <button id="connectWallet" class="walletBtn">🔗 Connect Wallet</button>
+
+    <div id="walletInfo" class="walletInfo">
+      Wallet not connected.
+    </div>
+
+    <div id="balanceInfo" class="balanceInfo"></div>
+  </div>
+
+  <!-- BLOCKCHAIN STATS -->
+  <div class="card">
+    <h2>$CJ Blockchain Stats</h2>
+    <div id="statsBox" style="color:var(--muted)">Loading...</div>
+  </div>
+
+  <!-- GECKO CHART -->
+  <div class="card">
+    <h2>$CJ Live GeckoTerminal Chart</h2>
+    <iframe 
+      src="https://www.geckoterminal.com/bsc/pools/0x832e1e4aFeE57AA9ddd2F8C81A31d0814d9A15A0?embed=1&info=0"
+      style="width:100%;height:500px;border:0;border-radius:0.8rem;">
+    </iframe>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="card" style="text-align:center;color:var(--muted);">
+    Private Member Portal — Do not share access.
+    <br><br>
+    <a href="index.html" style="color:var(--accent-strong)">← Back to main</a>
+  </div>
+
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
