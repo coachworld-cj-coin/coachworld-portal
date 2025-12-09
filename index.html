@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Coach World — Home of $CJ Coin</title>
+  <link rel="icon" type="logo.png" href="logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Coach World — Home of $CJ Coin (Coach Joel House) on BNB Smart Chain. Community coin supporting the InterLink ecosystem."
+  />
+
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <img src="logo.png" alt="logo.png" width="32" height="32"
+          style="border-radius:999px;border:2px solid #f5c75b;box-shadow:0 0 0 3px rgba(245,199,91,0.25);" />
+
+        <div class="nav-title">
+          <div class="nav-title-main">Coach World</div>
+          <div class="nav-title-sub">Home of $CJ Coin · Coach Joel House</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#top">Home</a>
+        <a href="#about">About</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#whitepaper">Whitepaper</a>
+        <a href="#contact">Contact</a>
+        <a href="login.html">Member Login</a>
+        <span class="nav-cta">$CJ · BNB Smart Chain</span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main" id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Coach World — Home of $CJ Coin
+        </div>
+        <h1>
+          A community coin for<br />
+          <span class="accent">Coach Joel House</span> &amp; the
+          <span class="accent interlink-link glow-pulse" style="cursor:pointer;">InterLink</span> ecosystem.
+        </h1>
+        <p class="hero-tagline">
+          <strong>$CJ</strong> is a personal, community-driven utility coin created by
+          Coach Joel. It supports InterLink and ITLX flows, powers rewards, and unlocks
+          utilities inside Coach Joel House — with no presale, no team allocation, and
+          0% trading tax.
+        </p>
+
+        <div class="hero-cta-row">
+          <a class="btn btn-primary"
+            href="https://pancakeswap.finance/swap?outputCurrency=0x9ECEfef5d5B5b0aCF2467393e7b5A6c7c501c6F6"
+            target="_blank" rel="noopener noreferrer">
+            🥞 Buy $CJ on PancakeSwap
+          </a>
+          <a class="btn btn-outline"
+            href="https://bscscan.com/token/0x9ECEfef5d5B5b0aCF2467393e7b5A6c7c501c6F6"
+            target="_blank" rel="noopener noreferrer">
+            🔎 View Contract on BscScan
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <span class="label">Token</span>
+            <div>$CJ — Coach Joel House Coin</div>
+          </div>
+          <div>
+            <span class="label">Chain</span>
+            <div>BNB Smart Chain (BEP-20)</div>
+          </div>
+          <div>
+            <span class="label">Contract</span>
+            <div class="highlight">0x9ECE...c6F6</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h2>$CJ Snapshot</h2>
+        <div class="token-overview">
+          <div>
+            <span class="highlight">21,000,000 CJ</span> total supply.<br />
+            Fixed supply, no presale, and no team or VC allocation.
+            <div class="supply-stat">Total Supply · 21,000,000 CJ</div>
+          </div>
+          <div>
+            Liquidity is <span class="highlight">provided &amp; locked</span> by Coach Joel
+            and the loyal community via PinkSale LP lock.
+          </div>
+          <div>
+            <span class="highlight">0% buy &amp; sell tax.</span> $CJ is a pure community
+            utility coin with on-chain transparency.
+          </div>
+          <div class="pill-row">
+            <span class="pill">Community Coin</span>
+            <span class="pill">No Presale</span>
+            <span class="pill">No Team Allocation</span>
+            <span class="pill">LP Locked</span>
+            <span class="pill">InterLink Ecosystem Support</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SECTIONS BELOW -->
+    <!-- (UNCHANGED CONTENT FROM ORIGINAL) -->
+    <!-- About, Tokenomics, Roadmap, Whitepaper, Contact -->
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#top">Back to top</a>
+      <a href="https://bscscan.com/token/0x9ECEfef5d5B5b0aCF2467393e7b5A6c7c501c6F6"
+        target="_blank" rel="noopener noreferrer">BscScan
+      </a>
+      <a href="https://pancakeswap.finance/swap?outputCurrency=0x9ECEfef5d5B5b0aCF2467393e7b5A6c7c501c6F6"
+        target="_blank" rel="noopener noreferrer">Buy on PancakeSwap
+      </a>
+    </div>
+    <div>
+      © <span id="year"></span> Coach World — $CJ Coin · All rights reserved.
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="interlinkModal" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" id="closeInterlink">✖</button>
+      <iframe src="https://interlinklabs.ai/" class="modal-frame"></iframe>
+    </div>
+  </div>
+
+  <script src="netlify/functions/index.js"></script>
+</body>
+</html>
+

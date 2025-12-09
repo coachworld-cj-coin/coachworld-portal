@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Admin Panel — Coach World</title>
+<link rel="icon" type="logo.png" href="logo.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="css/admin-panel.css" />
+</head>
+<body>
+
+<button class="btn-logout" id="adminLogout">Logout Admin</button>
+
+<h1 class="title">Admin Panel — Coach World</h1>
+<p class="sub">
+Manage member access, view login history, and control private access to $CJ tools.
+</p>
+
+<table class="table" id="memberTable">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Registered</th>
+      <th>Last Login</th>
+      <th>Logins</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script src="netlify/functions/admin-panel.js"></script>
+</body>
+</html>
+
+
